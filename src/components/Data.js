@@ -6,7 +6,7 @@ import { Link, Route } from 'react-router-dom';
 
 function Data({ search }) {
   const [data, setData] = useState([]);
-  const apiUrl = `http://www.omdbapi.com/?s=${search}&apikey=a0d5cc0b`;
+  const apiUrl = `https://www.omdbapi.com/?s=${search}&apikey=a0d5cc0b`;
 
   useEffect(() => {
     fetchData();

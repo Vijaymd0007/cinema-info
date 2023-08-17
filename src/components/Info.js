@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import styled from "styled-components"
 import { useState, useEffect } from 'react';
 import axios from "axios"
+import gif from "./gif.gif"
 
 function Info() {
 
@@ -12,7 +13,7 @@ function Info() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://www.omdbapi.com/?i=${itemId}&apikey=a0d5cc0b`);
+          const response = await axios.get(`https://www.omdbapi.com/?i=${itemId}&apikey=a0d5cc0b`);
           setItem(response.data);
         } catch (error) {
           console.error("Error fetching data:", error);
@@ -24,7 +25,7 @@ function Info() {
     console.log(item)
   
   if (!item) {
-    return <p>Loading...</p>;
+    return <img  src={gif} />;
   }
   return (
     <Container>
